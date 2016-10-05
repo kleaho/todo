@@ -1,10 +1,7 @@
 var newtodo = document.querySelector("button");
+newtodo.addEventListener("click", handlebuttonClick);
 function handlebuttonClick(event){
   event.preventDefault();
-  var todocount = document.querySelector("a.todo-count").textContent;
-  var newtodo = parseInt(todocount);
-  document.querySelector("a.todo-count").textContent = newtodo+1;
-
   var textString = document.querySelector("#list-text");
   var textArray = textString.value.split(",");
   for (var i = 0; i < textArray.length; i++) {
@@ -29,13 +26,17 @@ function handlebuttonClick(event){
     newspan.textContent = textArray[i];
     newlabel.appendChild(newspan);
 
+    var todocount = document.querySelector("a.todo-count").textContent;
+    var newtodo = parseInt(todocount);
+    document.querySelector("a.todo-count").textContent = newtodo+1;
+
     var clearTodoEntry = document.querySelector("#list-text");
     clearTodoEntry.value = null;
 
-    var cleardefault = document.querySelector(".nothing-text");
+    var cleardefault = document.querySelector(".nothing");
     cleardefault.classList.add("clear-nothing");
     cleardefault.classList.remove("nothing");
+    console.log();
 
   }
 }
-newtodo.addEventListener("click", handlebuttonClick);
