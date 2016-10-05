@@ -33,10 +33,9 @@ function handlebuttonClick(event){
     var clearTodoEntry = document.querySelector("#list-text");
     clearTodoEntry.value = null;
 
-    var cleardefault = document.querySelector(".nothing");
+    var cleardefault = document.querySelector(".nothing-text");
     cleardefault.classList.add("clear-nothing");
     cleardefault.classList.remove("nothing");
-    console.log();
 
   }
 }
