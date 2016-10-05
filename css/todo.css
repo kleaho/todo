@@ -109,4 +109,5 @@ input:checked + span {
 
 .clear-nothing {
   display: none;
+  margin: 0px;
 }
