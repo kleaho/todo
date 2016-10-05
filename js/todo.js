@@ -5,7 +5,11 @@ function handlebuttonClick(event){
   var newtodo = parseInt(todocount);
   document.querySelector("a.todo-count").textContent = newtodo+1;
 
-  var parent = document.querySelector("main");
+  var textString = document.querySelector("#list-text");
+  var textArray = textString.value.split(",");
+  for (var i = 0; i < textArray.length; i++) {
+
+    var parent = document.querySelector("main");
 
     var newTodoText = document.createElement("div");
     newTodoText.classList.add("all-submissions");
@@ -22,7 +26,7 @@ function handlebuttonClick(event){
     newlabel.appendChild(newinput);
 
     var newspan = document.createElement("span");
-    newspan.textContent = document.querySelector("#list-text").value;
+    newspan.textContent = textArray[i];
     newlabel.appendChild(newspan);
 
     var clearTodoEntry = document.querySelector("#list-text");
@@ -32,9 +36,6 @@ function handlebuttonClick(event){
     cleardefault.classList.add("clear-nothing");
     cleardefault.classList.remove("nothing");
 
-    var cleardefault2 = document.querySelector(".nothing");
-    cleardefault2.classList.add("clear-nothing");
-    cleardefault2.classList.remove("nothing");
-
+  }
 }
 newtodo.addEventListener("click", handlebuttonClick);
